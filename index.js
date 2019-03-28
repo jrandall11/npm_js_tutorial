@@ -25,7 +25,7 @@ function Phrase(content) {
 
 	// Returns content processed for palindrome testing.
 	this.processedContent = function processedContent() {
-		return this.processor(this.content);
+		return this.letters().toLowerCase();
 	}
 
 	// Returns true if the phrase is a palindrome, false otherwise.
@@ -36,6 +36,11 @@ function Phrase(content) {
 	// Makes the phrase LOUDER
 	this.louder = function louder() {
 		return this.content.toUpperCase();
+	}
+
+	// Returns the letters in the content.
+	this.letters = function letters() {
+		return (this.content.match(/[a-z]/gi) || []).join("");
 	}
 }
 
